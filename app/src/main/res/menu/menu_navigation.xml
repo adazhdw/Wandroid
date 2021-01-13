@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeItem"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_24dp"
+        android:title="@string/home_text" />
+    <item
+        android:id="@+id/systemItem"
+        android:enabled="true"
+        android:icon="@drawable/ic_system_24dp"
+        android:title="@string/system_text" />
+    <item
+        android:id="@+id/subscribeItem"
+        android:enabled="true"
+        android:icon="@drawable/ic_subscriptions_24dp"
+        android:title="@string/subscribe_text" />
+
+    <item
+        android:id="@+id/projectsItem"
+        android:enabled="true"
+        android:icon="@drawable/ic_projects_24dp"
+        android:title="@string/projects_text" />
+
+    <item
+        android:id="@+id/meItem"
+        android:enabled="true"
+        android:icon="@drawable/ic_account_box_24dp"
+        android:title="@string/me_text" />
+
+</menu>

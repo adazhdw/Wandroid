@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/menu_home_header"
+            app:navigationIcon="@drawable/ic_menu_24dp"
+            app:title="玩Android"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <com.zhdw.wandroid.widget.NestedScrollViewEx
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_220"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/interviewIv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/banner" />
+
+                <ImageView
+                    android:id="@+id/qaIv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/interviewIv" />
+
+                <co.lujun.androidtagview.TagContainerLayout
+                    android:id="@+id/tagContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    app:container_enable_drag="false"
+                    app:horizontal_interval="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/qaIv"
+                    app:tag_clickable="true"
+                    app:tag_theme="random"
+                    app:vertical_interval="5dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.zhdw.wandroid.widget.NestedScrollViewEx>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

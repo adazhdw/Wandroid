@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name2">Wandroid</string>
+    <string name="home_text">首页</string>
+    <string name="system_text">体系</string>
+    <string name="subscribe_text">公众号</string>
+    <string name="me_text">我的</string>
+    <string name="projects_text">项目</string>
+    <string name="pin_to_top_text">置顶</string>
+    <string name="newest_text">新</string>
+    <string name="published_by_this_site_text">本站发布</string>
+    <string name="load_complete_text">加载完成</string>
+    <string name="newest_articles_text">最新文章</string>
+    <string name="more_articles_text"><![CDATA[更多 >]]></string>
+    <string name="nickname_text">昵称</string>
+    <string name="message_center_text">消息中心</string>
+    <string name="integral_text">本站积分</string>
+    <string name="integral_rule_text">积分规则</string>
+    <string name="integral_rank_text">积分排行榜</string>
+    <string name="article_share_text">文章分享</string>
+    <string name="article_collect_text">文章收藏</string>
+    <string name="website_collect_text">网站收藏</string>
+    <string name="project_share_text">项目分享</string>
+    <string name="input_search_tips">请输入搜索关键词</string>
+</resources>
