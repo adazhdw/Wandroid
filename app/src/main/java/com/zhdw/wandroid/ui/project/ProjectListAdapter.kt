@@ -12,6 +12,7 @@ import com.adazhdw.ktlib.list.holder.BaseVBViewHolder
 import com.zhdw.wandroid.databinding.ItemProjectListBinding
 import com.zhdw.wandroid.ui.ArticleData
 import com.zhdw.wandroid.ui.glide
+import com.zhdw.wandroid.ui.web.startWeb
 
 
 /**
@@ -52,6 +53,9 @@ class ProjectListAdapter : ViewBindingAdapter<ArticleData>() {
                 it.qATag.visible()
                 it.publishTag.text = data.tags[0].name
                 it.qATag.text = data.tags[1].name
+            }
+            holder.itemView.setOnClickListener { view->
+                view.context.startWeb(data.link)
             }
         }
     }

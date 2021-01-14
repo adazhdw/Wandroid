@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import com.adazhdw.kthttp.coroutines.toClazz
 import com.adazhdw.kthttp.entity.Param
 import com.adazhdw.kthttp.ext.httpRequest
+import com.adazhdw.kthttp.ext.postRequest
 import com.adazhdw.ktlib.base.mvvm.BaseRepository
 import com.adazhdw.ktlib.base.mvvm.BaseViewModel
 import com.zhdw.wandroid.constant.C
@@ -38,7 +39,7 @@ class SearchRepository : BaseRepository() {
     }
 
     suspend fun searchArticles(page: Int, k: String): BaseResponse<HomeArticleList> {
-        return httpRequest {
+        return postRequest {
             url(C.BASE_URL + "/article/query/$page/json")
             addParam("k", k)
         }.toClazz<BaseResponse<HomeArticleList>>().await()

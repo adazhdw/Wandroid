@@ -1,5 +1,6 @@
 package com.zhdw.wandroid.ui.search
 
+import android.util.Log
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -94,7 +95,9 @@ class SearchArticlesFragment : ListFragment<ArticleData, ArticleListAdapter>() {
     private var key: String? = null
     override fun onLoad(page: Int, callback: LoadDataCallback<ArticleData>) {
         key?.let {
-            launchOnUI {
+            launchOnUI(error = {
+                Log.d(TAG, "$it")
+            }) {
                 val data = repository.searchArticles(page, it).data
                 val datas = data?.datas
                 if (datas != null) {

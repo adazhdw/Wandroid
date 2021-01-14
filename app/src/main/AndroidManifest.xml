@@ -23,6 +23,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:label">
+        <activity android:name=".ui.me.LoginActivity"></activity>
         <activity android:name=".ui.info.ArticleListActivity" />
         <activity android:name=".ui.search.SearchActivity" />
         <activity android:name=".ui.MainActivity">
