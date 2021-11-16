@@ -1,7 +1,6 @@
 package com.zhdw.wandroid.ui.web
 
 import android.content.Context
-import android.content.Intent
 import android.graphics.Bitmap
 import android.view.KeyEvent
 import android.webkit.WebView
@@ -14,6 +13,7 @@ import com.just.agentweb.WebViewClient
 import com.zhdw.wandroid.R
 import com.zhdw.wandroid.base.BaseActivityBinding
 import com.zhdw.wandroid.databinding.ActivityWebviewLayoutBinding
+import com.zhdw.wandroid.ui.startActivity
 
 
 /**
@@ -24,7 +24,7 @@ import com.zhdw.wandroid.databinding.ActivityWebviewLayoutBinding
 
 fun Context.startWeb(url: String) {
     if (url.isBlank()) return
-    startActivity(Intent(this, WebViewActivity::class.java).putExtra("url", url))
+    startActivity<WebViewActivity>("url" to url)
 }
 
 class WebViewActivity : BaseActivityBinding() {

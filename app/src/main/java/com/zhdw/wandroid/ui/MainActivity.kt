@@ -74,10 +74,10 @@ class MainActivity : BaseActivityBinding() {
     }
 
     override fun onBackPressed() {
-        /*if (viewBinding.bottomNav.currentItem != 0) {
+        if (viewBinding.bottomNav.currentItem != 0) {
             viewBinding.bottomNav.currentItem = 0
             return
-        }*/
+        }
         super.onBackPressed()
     }
 }

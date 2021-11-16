@@ -3,6 +3,7 @@ package com.zhdw.wandroid.ui
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
 import androidx.core.widget.NestedScrollView
@@ -68,5 +69,9 @@ fun NestedScrollView.onScroll(
 }
 
 inline fun <reified T : Activity> Context?.startActivity(vararg extras: Pair<String, Any?>) {
-    this?.startActivity(Intent(this, T::class.java).putExtrasEx(*extras))
+    val intent = Intent(this, T::class.java).putExtrasEx(*extras)
+    if (this !is Activity) {
+        intent.addFlags(FLAG_ACTIVITY_NEW_TASK)
+    }
+    this?.startActivity(intent)
 }
