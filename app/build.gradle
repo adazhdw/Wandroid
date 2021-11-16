@@ -43,22 +43,22 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3'
 
     //Lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
 
     //Navigation
-    def nav_version = "2.3.2"
+    def nav_version = "2.3.4"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.material:material:1.4.0'
     //viewPager2
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
@@ -80,20 +80,20 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
 
     //RecyclerViewAdapter
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
 
     //https://github.com/ittianyu/BottomNavigationViewEx
     implementation 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
 
     //https://github.com/youth5201314/banner
-    implementation 'com.youth.banner:banner:2.1.0'
+    implementation 'com.youth.banner:banner:2.2.2'
 
-    implementation 'com.adazhdw:ktlib:1.1.1'
-    implementation 'com.adazhdw:kthttp:0.2.11'
-    implementation 'com.github.adazhdw:RVAdapter:1.1.9'
+    implementation 'com.github.adazhdw:KtLibTest:0.5.0'
+    implementation 'com.github.adazhdw:KtHttp:0.2.35'
+    implementation 'com.github.adazhdw:RVAdapter:1.1.11'
 
     //https://github.com/hackware1993/MagicIndicator
-    implementation 'com.github.hackware1993:MagicIndicator:1.6.0'
+    implementation 'com.github.hackware1993:MagicIndicator:1.7.0'
 
     //FlowLayout流式布局
     implementation 'com.hyman:flowlayout-lib:1.1.2'
@@ -101,7 +101,7 @@ dependencies {
     implementation 'co.lujun:androidtagview:1.1.7'
 
     //https://github.com/Justson/AgentWeb
-    implementation 'com.just.agentweb:agentweb:4.1.3'
+    implementation 'com.github.Justson.AgentWeb:agentweb-core:v4.1.9-androidx'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

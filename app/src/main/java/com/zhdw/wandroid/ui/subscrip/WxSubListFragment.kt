@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.adazhdw.adapter.list.decoration.LinearSpacingItemDecoration
 import com.adazhdw.kthttp.coroutines.toClazz
-import com.adazhdw.kthttp.ext.httpRequest
+import com.adazhdw.kthttp.getRequest
 import com.adazhdw.ktlib.ext.dp2px
 import com.adazhdw.ktlib.list.ListFragment
 import com.zhdw.wandroid.constant.C
@@ -38,7 +38,7 @@ class WxSubListFragment : ListFragment<ArticleData, ArticleListAdapter>() {
         launchOnUI(error = {
             callback.onFail(0,"")
         }) {
-            val data = httpRequest { url(C.BASE_URL + "/wxarticle/list/$id/$page/json") }
+            val data = getRequest { url(C.BASE_URL + "/wxarticle/list/$id/$page/json") }
                 .toClazz<BaseResponse<HomeArticleList>>().await().data
             val list = data?.datas ?: listOf()
             val currSize = mData.size + list.size

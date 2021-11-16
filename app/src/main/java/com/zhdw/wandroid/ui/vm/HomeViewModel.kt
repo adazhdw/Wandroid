@@ -2,7 +2,7 @@ package com.zhdw.wandroid.ui.vm
 
 import androidx.lifecycle.MutableLiveData
 import com.adazhdw.kthttp.coroutines.toClazz
-import com.adazhdw.kthttp.ext.httpRequest
+import com.adazhdw.kthttp.getRequest
 import com.adazhdw.ktlib.base.mvvm.BaseRepository
 import com.adazhdw.ktlib.base.mvvm.BaseViewModel
 import com.zhdw.wandroid.constant.C
@@ -44,23 +44,23 @@ class HomeViewModel : BaseViewModel<HomeRepository>() {
 
 class HomeRepository : BaseRepository() {
     suspend fun getBanner(): ListResponse<BannerData> {
-        return httpRequest { url(C.BASE_URL + "/banner/json") }.toClazz<ListResponse<BannerData>>().await()
+        return getRequest { url(C.BASE_URL + "/banner/json") }.toClazz<ListResponse<BannerData>>().await()
     }
 
     suspend fun getFriendWeb(): ListResponse<FriendWeb> {
-        return httpRequest { url(C.BASE_URL + "/friend/json") }.toClazz<ListResponse<FriendWeb>>().await()
+        return getRequest { url(C.BASE_URL + "/friend/json") }.toClazz<ListResponse<FriendWeb>>().await()
     }
 
     suspend fun getPinArticle(): ListResponse<ArticleData> {
-        return httpRequest { url(C.BASE_URL + "/article/top/json") }.toClazz<ListResponse<ArticleData>>()
+        return getRequest { url(C.BASE_URL + "/article/top/json") }.toClazz<ListResponse<ArticleData>>()
                 .await()
     }
 
     suspend fun getHomeArticleList(page: Int): BaseResponse<HomeArticleList> {
-        return httpRequest { url(C.BASE_URL + "/article/list/$page/json") }.toClazz<BaseResponse<HomeArticleList>>().await()
+        return getRequest { url(C.BASE_URL + "/article/list/$page/json") }.toClazz<BaseResponse<HomeArticleList>>().await()
     }
 
     suspend fun getHomeProjectList(page: Int): BaseResponse<HomeArticleList> {
-        return httpRequest { url(C.BASE_URL + "/article/listproject/$page/json") }.toClazz<BaseResponse<HomeArticleList>>().await()
+        return getRequest { url(C.BASE_URL + "/article/listproject/$page/json") }.toClazz<BaseResponse<HomeArticleList>>().await()
     }
 }

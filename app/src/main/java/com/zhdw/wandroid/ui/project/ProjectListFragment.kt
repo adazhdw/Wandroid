@@ -5,8 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.adazhdw.adapter.list.decoration.LinearSpacingItemDecoration
 import com.adazhdw.kthttp.coroutines.toClazz
-import com.adazhdw.kthttp.entity.Param
-import com.adazhdw.kthttp.ext.httpRequest
+import com.adazhdw.kthttp.getRequest
 import com.adazhdw.ktlib.ext.dp2px
 import com.adazhdw.ktlib.list.ListFragment
 import com.zhdw.wandroid.constant.C
@@ -40,9 +39,9 @@ class ProjectListFragment : ListFragment<ArticleData, ProjectListAdapter>() {
 
     override fun onLoad(page: Int, callback: LoadDataCallback<ArticleData>) {
         launchOnUI {
-            val data = httpRequest {
+            val data = getRequest {
                 url(C.BASE_URL + "/project/list/$page/json")
-                addParam("cid","$id")
+                queryParams("cid", "$id")
             }.toClazz<BaseResponse<HomeArticleList>>().await().data
             val list = data?.datas ?: listOf()
             val currSize = mData.size + list.size

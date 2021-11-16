@@ -2,9 +2,8 @@ package com.zhdw.wandroid.ui.vm
 
 import androidx.lifecycle.MutableLiveData
 import com.adazhdw.kthttp.coroutines.toClazz
-import com.adazhdw.kthttp.entity.Param
-import com.adazhdw.kthttp.ext.httpRequest
-import com.adazhdw.kthttp.ext.postRequest
+import com.adazhdw.kthttp.getRequest
+import com.adazhdw.kthttp.postRequest
 import com.adazhdw.ktlib.base.mvvm.BaseRepository
 import com.adazhdw.ktlib.base.mvvm.BaseViewModel
 import com.zhdw.wandroid.constant.C
@@ -35,13 +34,13 @@ class SearchViewModel : BaseViewModel<SearchRepository>() {
 
 class SearchRepository : BaseRepository() {
     suspend fun getHotKeys(): ListResponse<HotKey> {
-        return httpRequest { url(C.BASE_URL + "/hotkey/json") }.toClazz<ListResponse<HotKey>>().await()
+        return getRequest { url(C.BASE_URL + "/hotkey/json") }.toClazz<ListResponse<HotKey>>().await()
     }
 
     suspend fun searchArticles(page: Int, k: String): BaseResponse<HomeArticleList> {
         return postRequest {
             url(C.BASE_URL + "/article/query/$page/json")
-            addParam("k", k)
+            queryParams("k", k)
         }.toClazz<BaseResponse<HomeArticleList>>().await()
     }
 }

@@ -2,7 +2,7 @@ package com.zhdw.wandroid.ui.vm
 
 import androidx.lifecycle.MutableLiveData
 import com.adazhdw.kthttp.coroutines.toClazz
-import com.adazhdw.kthttp.ext.httpRequest
+import com.adazhdw.kthttp.getRequest
 import com.adazhdw.ktlib.base.mvvm.BaseRepository
 import com.adazhdw.ktlib.base.mvvm.BaseViewModel
 import com.google.gson.reflect.TypeToken
@@ -75,11 +75,11 @@ class TreeTabViewModel : BaseViewModel<WxSubRepository>() {
 class WxSubRepository : BaseRepository() {
 
     suspend fun geWxSub(): BaseResponse<List<TreeData>> {
-        return httpRequest { url(C.BASE_URL + "/wxarticle/chapters/json") }.toClazz<BaseResponse<List<TreeData>>>().await()
+        return getRequest { url(C.BASE_URL + "/wxarticle/chapters/json") }.toClazz<BaseResponse<List<TreeData>>>().await()
     }
 
     suspend fun getProjectTreeData(): BaseResponse<List<TreeData>> {
-        return httpRequest { url(C.BASE_URL + "/project/tree/json") }.toClazz<BaseResponse<List<TreeData>>>().await()
+        return getRequest { url(C.BASE_URL + "/project/tree/json") }.toClazz<BaseResponse<List<TreeData>>>().await()
     }
 
 }

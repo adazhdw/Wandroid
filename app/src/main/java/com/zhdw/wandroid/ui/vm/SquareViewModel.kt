@@ -2,7 +2,7 @@ package com.zhdw.wandroid.ui.vm
 
 import androidx.lifecycle.MutableLiveData
 import com.adazhdw.kthttp.coroutines.toClazz
-import com.adazhdw.kthttp.ext.httpRequest
+import com.adazhdw.kthttp.getRequest
 import com.adazhdw.ktlib.base.mvvm.BaseRepository
 import com.adazhdw.ktlib.base.mvvm.BaseViewModel
 import com.zhdw.wandroid.constant.C
@@ -53,14 +53,14 @@ class SquareViewModel : BaseViewModel<SquareRepository>() {
 class SquareRepository : BaseRepository() {
 
     suspend fun getPlazaList(page: Int): BaseResponse<HomeArticleList> {
-        return httpRequest { url(C.BASE_URL + "/user_article/list/$page/json") }.toClazz<BaseResponse<HomeArticleList>>().await()
+        return getRequest { url(C.BASE_URL + "/user_article/list/$page/json") }.toClazz<BaseResponse<HomeArticleList>>().await()
     }
 
     suspend fun getNaviData(): BaseResponse<List<NaviData>> {
-        return httpRequest { url(C.BASE_URL + "/navi/json") }.toClazz<BaseResponse<List<NaviData>>>().await()
+        return getRequest { url(C.BASE_URL + "/navi/json") }.toClazz<BaseResponse<List<NaviData>>>().await()
     }
 
     suspend fun getTreeData(): BaseResponse<List<TreeData>> {
-        return httpRequest { url(C.BASE_URL + "/tree/json") }.toClazz<BaseResponse<List<TreeData>>>().await()
+        return getRequest { url(C.BASE_URL + "/tree/json") }.toClazz<BaseResponse<List<TreeData>>>().await()
     }
 }
